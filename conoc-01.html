@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>LS automática</title>
+   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/css-01.css">
+  <link rel="stylesheet" href="styles\video-sc.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+  <link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+/>
+</head>
+<body>
+
+
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+      <a class="navbar-brand" href="#">Tracker 2021</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Generalidades
+              <span class="sr-only">(current)</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="diseno-exterior.html">Diseño Exterior</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Diseño Interior</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Tecnología </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Seguridad</a>
+          </li>
+		  <li class="nav-item">
+            <a class="nav-link" href="#">Desempeño</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  
+    
+<div class="container-fluid">
+    <h1 class="mt-5">LS automática</h1>
+  
+</div>
+<div class="container align-items-center">
+
+<!-------------------------------------------->
+<div class="container scroll-container">
+  <section class="scroll-sequence__container apple-container">
+    <div class="scroll-sequence apple-sequence"></div>
+    <div class="scroll-sequence__content">
+      <div class="speak">
+        <h1 class="animate__animated animate__fadeInDown" style="color: white;">Scroll Sequence</h1>
+        <p style="color: rgb(182, 134, 45);">Chevrolet Tracker 2021</p>
+      </div>
+      <div class="speak">
+        <h1 style="color:  rgb(182, 134, 45);">Generalidades</h1>
+        <p style="color:  rgb(182, 134, 45);">Líneas dominantes</p>
+      </div>
+      <div class="speak">
+        <h1 style="color:  rgb(182, 134, 45);">Texto aleatorio</h1>
+        <p style="color:  rgb(182, 134, 45);">totalmente nueva Chevrolet Tracker 2021</p>
+      </div>
+    </div>
+  </section>
+<!--   <div class="spacer" style="height: 80vh"></div> -->
+  <section class="scroll-sequence__container tree-container">
+    <canvas id="hero-lightpass" />
+
+    <div class="scroll-sequence tree-sequence"></div>
+  
+    
+    <div class="scroll-sequence__content">
+      <div class="speak">
+        
+        
+        <h1 style="color: white;">This took me a while</h1>
+        <p>To get right, but here it is!</p>
+      </div>
+      <div class="speak">
+        <h1>Apple's images load faster</h1>
+        <p>Compression favors less details. So, shots of the forest was not the best idea :P</p>
+      </div>
+      <div class="speak">
+        <h1>Running out of things</h1>
+        <p>To say so imma head out.</p>
+      </div>
+  </section>
+<!--   <div class="spacer"></div> -->
+</div>
+
+
+
+
+  <div class="row">
+    <div class="col">
+      
+         <!-- <div class="col-4 ifor">
+            Espejos retrovisores exteriores con ajuste eléctrico
+            Spoiler trasero 
+            Barras de techo negras 
+            Rines de aluminio de 16”
+            <br><br>
+            El portafolio de Tracker se compone de 4 versiones, 1 con transmisión manual y 3 automáticas que son:
+            LS Manual, LS Automática, LT Automática y Premier Automática
+            Observa como desde el equipamiento base ya se cuentan con características importantes como un motor turbo, 
+            dirección electroasistida, luces diurnas en LED, OnStar 4G LTE, Alerta de punto ciego, 6 bolsas de aire, 
+            7entre otros. Atributos a los que se le van sumando otras características para complementar a las siguientes versiones. 
+            </div> -->
+
+            
+        
+    </div>
+       
+      
+  </div>
+</div>	
+  </body>
+
+
+ 
+  <script>const html = document.documentElement;
+    const canvas = document.getElementById("hero-lightpass");
+    const context = canvas.getContext("2d");
+    
+    const frameCount = 132;
+    const currentFrame = index => (
+      `https://prueba-web-app-chev.000webhostapp.com/secuencias/${index.toString().padStart(4, '0')}.jpg`
+    )
+    
+    const preloadImages = () => {
+      for (let i = 1; i < frameCount; i++) {
+        const img = new Image();
+        img.src = currentFrame(i);
+      }
+    };
+    
+    const img = new Image()
+    img.src = currentFrame(1);
+    canvas.width=1920;
+    canvas.height=1080;
+    img.onload=function(){
+      context.drawImage(img, 0, 0);
+    }
+    
+    const updateImage = index => {
+      img.src = currentFrame(index);
+      context.drawImage(img, 0, 0);
+    }
+    
+    window.addEventListener('scroll', () => {  
+      const scrollTop = html.scrollTop;
+      const maxScrollTop = html.scrollHeight - window.innerHeight;
+      const scrollFraction = scrollTop / maxScrollTop;
+      const frameIndex = Math.min(
+        frameCount - 1,
+        Math.ceil(scrollFraction * frameCount)
+      );
+      
+      requestAnimationFrame(() => updateImage(frameIndex + 1))
+    });
+    
+    preloadImages()</script>
+
+ <!-- <script>
+    const registerVideo = (bound, video) => {
+	bound = document.querySelector(bound);
+	video = document.querySelector(video);
+	const scrollVideo = ()=>{
+		if(video.duration) {
+			const distanceFromTop = window.scrollY + bound.getBoundingClientRect().top;
+			const rawPercentScrolled = (window.scrollY - distanceFromTop) / (bound.scrollHeight - window.innerHeight);
+			const percentScrolled = Math.min(Math.max(rawPercentScrolled, 0), 1);
+			
+			video.currentTime = video.duration * percentScrolled;
+		}
+		requestAnimationFrame(scrollVideo);
+	}
+	requestAnimationFrame(scrollVideo);
+}
+
+
+registerVideo("#bound-one", "#bound-one video");
+
+registerVideo("#bound-two", "#bound-two video")
+
+registerVideo("#bound-three", "#bound-three video")
+  </script>-->
+</html>

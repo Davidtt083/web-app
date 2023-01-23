@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
+	<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles\style-01.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <!-- <script src="js\js.js"></script> -->
+    <style>
+      @media (min-width: 576px) { 
+        .video-container{
+          height: 150%;
+          width:200%;
+          overflow: hidden;
+        }
+      }
+    </style>
+    
+    <title>Tracker 2021</title>
+</head>
+<header>
+  <div class="overlay"></div>
+  <video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop">
+    <source src="images\header-tracker-2021.mp4" type="video/mp4">
+  </video>
+</header>
+<body>
+  <style>
+   @media only screen and (min-width : 992px){
+      .carta-01{
+        width:80% !important;
+        margin-left: 10%;
+      }
+      .carta-02{
+        padding-left: 40%;
+        padding-right: 40% ;
+      }
+    }
+  </style>
+  <div class="cont-p"> 
+    <div class="cont-01">
+      <div class="card border-0 carta-01" style="width:100%">
+        <div class="card-body">
+          <h1 class="card-title">Tracker 2021</h1>
+          <p class="card-text">Te damos la más cordial bienvenida al curso Chevrolet Tracker 2021</p>
+          <a href="indicaciones.html" class="btn-cocnoce"id="btn-01">Inicio</a>
+        </div>
+      </div>
+      <div class="card border-0 carta-02" id="carta-02" style="width:150%; z-index: 20;">
+        <div class="card-body">
+          <h1 class="card-title">Ingresa</h1>
+          <p class="card-text">Por favor introduce tu usuario y contraseña</p>
+          <form>
+            <div class="form-group" style="width:50%">
+              <label for="exampleInputEmail1">Ingresa tu nombre de usuario</label>
+              <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Usuario">
+              
+            </div>
+            <div class="form-group" style="width:50%">
+              <label for="exampleInputPassword1">Ingresa tu contraseña</label>
+              <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Contraseña">
+              <small id="emailHelp" class="form-text text-muted">Nunca reveles tu contraseña</small>
+            </div>
+            
+          </form>
+          <a href="indicaciones.html" class="btn btn-02" >aceptar</a>
+        </div>
+      </div>
+    </div>
+  </div>
+ 
+  <script>
+   $(document).ready(function(){
+    $("#btn-01").click(function(){
+        $("#carta-02").animate({            
+            top: '-500px',           
+        }, 500);
+    });
+});
+    </script>
+
+</body>
