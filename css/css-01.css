@@ -137,6 +137,7 @@ a.btn-cocnoce:hover{
 	color:#FFFF;
 	border-color: #B6862D;
 	shadow: none;	
+	cursor: pointer;
 }
 
 .vid-cab{
